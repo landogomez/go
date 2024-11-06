@@ -1,7 +1,10 @@
 // ASSIGNMENT
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func main() {
 	sendsSoFar := 35
@@ -26,4 +29,12 @@ func getNames() (string, string) {
 // NAMED RETURN VALUES
 func getCords() (x, y int) {
 	return // Implicitly returns x, y
+}
+
+// Early return
+func divide(dividend, divisor int) (int, error) {
+	if divisor == 0 {
+		return 0, errors.New("Cannot divide by zero")
+	}
+	return dividend / divisor, nil
 }
