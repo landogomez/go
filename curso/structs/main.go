@@ -6,5 +6,7 @@ func main() {
 
 	//assignment1()
 	//nested()
-	anonymous()
+	//anonymous()
+	//methods()
+	methods2()
 }
