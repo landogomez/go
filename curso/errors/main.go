@@ -3,7 +3,11 @@ package main
 func main() {
 	//errors()
 	//errors2()
-	errors3()
+	//errors3()
+
+	//practice()
+	//practice2()
+	practice3()
 }
 
 /*
