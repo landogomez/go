@@ -5,5 +5,6 @@ Interfaces are collections of method signatures. A type "implements" an interfac
 package main
 
 func main() {
-	interaz()
+	//interaz()
+	interfaz1()
 }
