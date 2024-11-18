@@ -1,6 +1,9 @@
 package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 // Slices In GO
 // 99 times out of 100, you'll use slices instead of arrays when working with ordered lists
@@ -53,5 +56,7 @@ func getMessageWithRetries2() [3]string {
 }
 
 func slicesGo() {
-
+	fmt.Println(getMessageWithRetriesForPlan(planPro))
+	fmt.Println(getMessageWithRetriesForPlan(planFree))
+	fmt.Println(getMessageWithRetriesForPlan("enterprise"))
 }

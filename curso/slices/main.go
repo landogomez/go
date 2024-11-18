@@ -1,5 +1,7 @@
 package main
 
 func main() {
-	arrays1()
+	//arrays1()
+	//slicesGo()
+	rangeGo()
 }
