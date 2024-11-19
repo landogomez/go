@@ -80,3 +80,53 @@ func maps1() {
 	test([]string{"alice", "bob", "charlie"}, []int{123, 456, 789})
 	test([]string{"alice", "bob", "charlie"}, []int{123, 456})
 }
+
+// MUTATIONS
+
+/*
+	INSERT AN ELEMENT
+	m[key] = value
+
+	GET AN ELEMENT
+	value = m[key]
+
+	DELETE AN ELEMENT
+	delete(m, key)
+
+	CHECK IF A KEY EXISTS
+	value, ok := m[key]
+
+*/
+
+// ASSIGNMENT
+/*
+	Complete the deleteIfNecessary function.
+
+	- If the user doesn't exist in the map, return the error not found
+	- If they exist, but aren't schedule for deletion, return deleted as false with
+	  no errors.
+	- If they exist and are scheduled for deletion, return deleted as true with no errors
+	  and delete the user from the map.
+
+*/
+
+func deleteIfNecessary(m map[string]user2, name string) (deleted bool, err error) {
+	existingUser, ok := m[name]
+	if !ok {
+		return false, errors.New("not found")
+	}
+	if existingUser.scheduleForDeletion {
+		delete(m, name)
+		return true, nil
+	}
+	return false, nil
+}
+
+type user2 struct {
+	name                string
+	number              int
+	scheduleForDeletion bool
+}
+
+// You can use structs as map keys if the struct has no fields that are maps, slices, or functions.
+// Effective go book.

@@ -3,5 +3,7 @@ package main
 func main() {
 	//arrays1()
 	//slicesGo()
-	rangeGo()
+	//rangeGo()
+
+	practice1()
 }
