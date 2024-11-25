@@ -36,3 +36,11 @@ func sendMessage(m Message) {
 func assignment1() {
 	fmt.Println("Hola")
 }
+
+// Operators
+
+/*
+	* - pointer dereference operator (access the value of the pointer)
+	& - address of operator (access the memory address of a variable)
+
+*/

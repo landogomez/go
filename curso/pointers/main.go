@@ -2,5 +2,8 @@ package main
 
 func main() {
 	//assignment2()
-	pointerReceivers()
+	//pointerReceivers()
+	//assignment3()
+	//ex1()
+	ex2()
 }
