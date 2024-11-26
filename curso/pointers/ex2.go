@@ -62,3 +62,31 @@ func (b AudioBook) Content() {
 	fmt.Println("Author: ", b.author)
 	fmt.Println("Time: ", b.lengthInMinutes)
 }
+
+func (b *PrintedBook) setAuthor(a string) {
+	b.author = a
+}
+
+func ex3() {
+	c := AudioBook{
+		title:           "El extranjero",
+		author:          "Albert Cammus",
+		lengthInMinutes: 60,
+	}
+
+	b := PrintedBook{
+		title:     "100 años de soledad",
+		author:    "Gabriel García Márquez",
+		pageCount: 850,
+	}
+	c.Content()
+	b.Content()
+
+	author := b.Author()
+	fmt.Println(author)
+	b.setAuthor("El Gabo")
+	author2 := b.author
+	fmt.Println(author2)
+	b.Content()
+
+}

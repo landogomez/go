@@ -5,5 +5,6 @@ func main() {
 	//pointerReceivers()
 	//assignment3()
 	//ex1()
-	ex2()
+	//ex2()
+	ex3()
 }
