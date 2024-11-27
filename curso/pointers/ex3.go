@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 Tarea:
 
@@ -21,9 +23,34 @@ type employee struct {
 }
 
 type promotable interface {
-	promote()
+	promote(r string)
 }
 
-func (e *employee) promote(r string, s float64) {
+func (e *employee) promote(r string) {
+	e.role = r
+	e.salary *= 2.1
+}
 
+func (e employee) Display() {
+	fmt.Println("Name: " + e.name)
+	fmt.Println("Role: " + e.role)
+	fmt.Println("Salary :", e.salary)
+}
+
+func GeneralPromotion(e promotable, r string) {
+	e.promote(r)
+}
+
+func ex4() {
+	e := employee{
+		name:   "George",
+		role:   "Jr Dev",
+		salary: 150.000,
+	}
+
+	e.Display()
+	GeneralPromotion(&e, "Sr Dev")
+	e.Display()
+	e.promote("Scrum Master")
+	e.Display()
 }
