@@ -1,6 +1,7 @@
 package main
 
 // Mutexes
+// Mutex is short for mutual exclusion.
 // A mutex is used to synchronize access to shared state across multiple goroutines.
 // A mutex has two methods: Lock and Unlock.
 // We can use a mutex to safely access data across multiple goroutines.
@@ -32,10 +33,14 @@ type safeCounter struct {
 }
 
 func (sc safeCounter) inc(key string) {
+	sc.mux.Lock()         // Lock so only one goroutine at a time can access the map
+	defer sc.mux.Unlock() // Unlock when the function is done
 	sc.slowIncrement(key)
 }
 
 func (sc safeCounter) val(key string) int {
+	sc.mux.Lock()
+	defer sc.mux.Unlock()
 	return sc.counts[key]
 }
 
