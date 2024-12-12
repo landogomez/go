@@ -35,8 +35,8 @@ func main() {
 
 	v1Router := chi.NewRouter()                // Create a new router for the /v1 route
 	v1Router.Get("/healthz", handlerReadiness) // Register the handlerReadiness function as the handler for the /ready route
-
-	router.Mount("/v1", v1Router) // Mount the /v1 router under the root router
+	v1Router.Get("/err", handlerErr)           // Register the handlerErr function as the handler for the /err route
+	router.Mount("/v1", v1Router)              // Mount the /v1 router under the root router
 
 	srv := &http.Server{
 		Handler: router,
